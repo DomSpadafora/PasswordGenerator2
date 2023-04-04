@@ -8,19 +8,27 @@ const passwordGenerator = () => {
     }
 
     let input = "";
-    let passowrd = "";
+    let password = "";
 
     let number = confirm('Would you like a number?')
     if(number) input += '0123456789';
 
-    let 
+    let lowerCase = confirm('Would you like a lower case letter?')
+    if(lowerCase) input += 'abcdefghijklmnopqrstuvwxyz'
 
-  
+    let uppercase = confirm('Would you like an uppercase letter?')
+    if(uppercase) input += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    let special = confirm('Would you like a special character?')
+    if (special) input += ('.?/!*&%')
+
+    for (let i = 0; i < length; i++) {
+      password += input[Math.floor(Math.random()*input.length)]
+    }
+
+    document.querySelector('#password').innerHTML = password;
     
 }
-
-
-
 
 
 document.querySelector('button').addEventListener('click', passwordGenerator)
