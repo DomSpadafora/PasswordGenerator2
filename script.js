@@ -1,14 +1,18 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+//great function for generating a password
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+const passwordGenerator = () => {
+  let length = prompt('how long would you like your password to be?');
+    if (length <8 || length > 128){
+      alert('Password nees to be between 8-128')
+      return passwordGenerator();
+    }
 
-  passwordText.value = password;
-
+  
+    
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
+
+
+document.querySelector('button').addEventListener('click', passwordGenerator)
